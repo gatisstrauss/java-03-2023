@@ -14,9 +14,7 @@ public class Exercise1 {
     }
 
     private static boolean calculate(int number1, int number2) {
-        if (number1 == 15 || number2 == 15){
-            return true;
-        }
-            return ((number1 + number2) == 15 || (number1 - number2) == 15);
+        return (number1 == 15 || number2 == 15 || (number1 + number2) == 15 || (number1 - number2) == 15);
+
     }
 }
