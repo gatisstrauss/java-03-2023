@@ -10,12 +10,12 @@ public class Exercise6 {
         int input = scanner.nextInt();
         int digits;
         int total = 0;
-        while (input > 0){
+        while (input > 0) {
             digits = input % 10;
             total = total + digits;
             input = input / 10;
         }
-            System.out.println("The sum of the entered numbers is " + total);
+        System.out.println("The sum of the entered numbers is " + total);
 
     }
 }

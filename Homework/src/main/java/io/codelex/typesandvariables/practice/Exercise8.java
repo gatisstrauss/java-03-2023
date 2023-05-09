@@ -12,8 +12,8 @@ public class Exercise8 {
         System.out.println("Enter the number of minutes:");
         int input = scanner.nextInt();
 
-        int years = input/minutesInAYear;
-        int days = input/minutesInADay;
+        int years = input / minutesInAYear;
+        int days = input / minutesInADay;
 
         System.out.println(input + " minutes is about " + years + " years and " + days + " days");
 
