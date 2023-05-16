@@ -7,6 +7,7 @@ public class VideoStoreTest {
 
     public static void main(String[] args) {
         final Scanner keyboard = new Scanner(System.in);
+        VideoStore videoStore = new VideoStore();
 
         while (true) {
             System.out.println("Choose the operation you want to perform ");
@@ -18,39 +19,50 @@ public class VideoStoreTest {
             int n = keyboard.nextInt();
 
             switch (n) {
-                case 0:
-                    System.exit(0);
-                case 1:
-                    fillVideoStore(keyboard);
-                    break;
-                case 2:
-                    rentVideo(keyboard);
-                    break;
-                case 3:
-                    returnVideo(keyboard);
-                    break;
-                default:
-                    break;
+                case 0 -> System.exit(0);
+                case 1 -> fillVideoStore(keyboard, videoStore);
+                case 2 -> rentVideo(keyboard, videoStore);
+                case 3 -> returnVideo(keyboard, videoStore);
+                default -> {
+                }
             }
 
         }
     }
 
-    private static void fillVideoStore(Scanner scanner) {
+    private static void fillVideoStore(Scanner scanner, VideoStore videoStore) {
         for (int i = 0; i < COUNT_OF_MOVIES; i++) {
             System.out.println("Enter movie name");
             String movieName = scanner.next();
             System.out.println("Enter rating");
-            int rating = scanner.nextInt();
+            double rating = scanner.nextDouble();
             //todo - add video
+            Video video = new Video(movieName);
+            video.receiveRating(rating);
+            videoStore.addVideo(video);
         }
+        Video video1 = new Video("The Matrix");
+        videoStore.addVideo(video1);
+
+        Video video2 = new Video("Godfather II");
+        videoStore.addVideo(video2);
+
+        Video video3 = new Video("Star Wars Episode IV: A New Hope");
+        videoStore.addVideo(video3);
     }
 
-    private static void rentVideo(Scanner scanner) {
+
+    private static void rentVideo(Scanner scanner, VideoStore videoStore) {
         //todo - rent video
+        System.out.println("Enter the title of the video You wish to rent: ");
+        String title = scanner.next();
+        videoStore.checkOutVideo(title);
     }
 
-    private static void returnVideo(Scanner scanner) {
+    private static void returnVideo(Scanner scanner, VideoStore videoStore) {
         //todo - return video
+        System.out.println("Enter the title of the video You wish to return: ");
+        String title = scanner.next();
+        videoStore.returnVideo(title);
     }
 }
