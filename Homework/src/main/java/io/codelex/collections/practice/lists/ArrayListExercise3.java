@@ -18,6 +18,8 @@ public class ArrayListExercise3 {
 
         //TODO: Add new color at the first and third position of the list
 
+        colors.add(0, "Magenta");
+        colors.add(2, "Limegreen");
         //Print the list
         System.out.println(colors);
     }

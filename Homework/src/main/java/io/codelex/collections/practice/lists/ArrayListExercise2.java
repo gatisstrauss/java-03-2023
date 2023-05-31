@@ -15,11 +15,11 @@ public class ArrayListExercise2 {
         colors.add("White");
         colors.add("Black");
 
-        /*
-        fixme
-        for (...) {
+
+//        fixme
+        for (String element : colors) {
           System.out.println(element);
         }
-        */
+
     }
 }
