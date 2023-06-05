@@ -1,9 +1,9 @@
 package io.codelex.classesandobjects.practice;
 
 public class Car {
-    double startKilometers;
-    double endKilometers;
-    double totalLiters;
+    private double startKilometers;
+    private double endKilometers;
+    private double totalLiters;
 
     public Car(double startOdo) {
         this.startKilometers = startOdo;
