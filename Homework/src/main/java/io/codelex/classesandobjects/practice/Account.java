@@ -21,8 +21,14 @@ public class Account {
         return balance;
     }
 
+    public static void transfer(Account from, Account to, double howMuch) {
+        from.withdrawal(howMuch);
+        to.deposit(howMuch);
+    }
+
     @Override
     public String toString() {
         return owner + " balance: " + balance;
     }
+
 }

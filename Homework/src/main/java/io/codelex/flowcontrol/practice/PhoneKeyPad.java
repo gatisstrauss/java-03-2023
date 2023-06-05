@@ -47,5 +47,6 @@ public class PhoneKeyPad {
 //               Šo pierakstu likās vieglāk rakstīt :)
             }
             System.out.print(digit);
+        }
     }
-}}
+}
