@@ -1,6 +1,6 @@
 package io.codelex.polymorphism.practice.exercise1;
 
-public class Bmw {
+public class Bmw implements Car {
     private Integer currentSpeed = 0;
 
     public void speedUp() {
@@ -8,7 +8,7 @@ public class Bmw {
     }
 
     public void slowDown() {
-        currentSpeed += 12;
+        currentSpeed -= 12;
     }
 
     public String showCurrentSpeed() {
@@ -17,5 +17,15 @@ public class Bmw {
 
     public void startEngine() {
         System.out.println("Rrrrrrr.....");
+    }
+
+    @Override
+    public void honk() {
+        Car.super.honk();
+    }
+
+    @Override
+    public void washWindows() {
+        Car.super.washWindows();
     }
 }
